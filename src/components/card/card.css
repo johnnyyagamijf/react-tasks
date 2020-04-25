@@ -1,0 +1,36 @@
+.container{
+  max-width: 700px;
+  margin: 20px 0 auto;
+  padding: 20px;
+}
+
+.container article{
+  margin: 10px 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background: none;
+}
+
+.container article strong{
+  font-size: 16px;
+  color: #ddd;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container article a{
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 2px solid #ddd;
+  height: 42px;
+  color: #999;
+}
+
