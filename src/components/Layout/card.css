@@ -25,4 +25,16 @@
   border-radius: 5px;
   color: gray;
   height: 42px;
+  transition: all 0.2s;
+}
+
+.container article p{
+  font-size: 16px;
+  margin-top: 5px;
+  line-height: 20px;
+  color: grey;
+}
+.container article a:hover{
+ background: gray;
+ color: white;
 }

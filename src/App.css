@@ -3,14 +3,18 @@
   padding: 0;
   text-decoration: none;
 }
-
+.itens{
+  margin: 20px auto;
+  max-width: 700px;
+  padding: 0 20px;
+}
 .action{
-  margin: auto;
-  align-items: center;
-  text-align: center;
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
 }
 .action button {
-  margin-left: 10px;
+        margin-left: 10px;
         padding: 10px;
         border-radius: 5px;
         border: 0;
@@ -18,6 +22,9 @@
         color: #fff;
         font-size: 16px;
         font-weight: bold;
-        cursor: pointer;
-        margin-bottom: 10px;
+        cursor: pointer;       
+}
+
+.action button:hover{
+  opacity: 0.2;
 }
