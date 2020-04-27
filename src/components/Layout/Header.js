@@ -4,6 +4,6 @@ import './header.css';
 
 export default () => {
   return(
-    <header>Minhas Tarefas</header>
+    <header><h3>Minhas Tarefas</h3></header>
   );
 }
