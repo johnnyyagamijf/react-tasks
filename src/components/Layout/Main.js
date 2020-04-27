@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 
-import Header from './Header';
 import Card from './Card'
 import api from '../../services/api';
 
