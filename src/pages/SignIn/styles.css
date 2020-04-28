@@ -1,0 +1,30 @@
+.form-signin{
+  max-width: 700px;
+  margin: 100px auto 0;
+}
+
+#cadastrar{
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  color:#000;
+  background: none;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  justify-content: center;
+  text-decoration: none;
+}
+
+#logar:hover{
+color: #000;
+background:  none;
+border-color:  #fff;
+transition: 0.2s all;
+}
+
+#cadastrar:hover{
+  color: #fff;
+  background:  #007bff;
+  border-color:  #fff;
+  transition: 0.2s all;
+  }

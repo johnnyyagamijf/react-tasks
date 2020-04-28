@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 
-import Card from './Card'
-import api from '../../services/api';
-
+import Card from '../Card'
+import api from '../../../services/api';
+import Header from '../Header';
+          
 export default class Main extends Component {
   constructor(props){
     super(props)
@@ -45,10 +46,11 @@ export default class Main extends Component {
   }
   render() {
     return(
-        <div className="itens">
+      <>
+          <div className="itens">
         {
           this.state.docs.map(task =>(
-            <Card title={task.title} description={task.description}/>
+            <Card key={task._id} title={task.title} description={task.description}/>
           ))
         }  
         <div className="action">
@@ -56,6 +58,7 @@ export default class Main extends Component {
           <button onClick={this.beforePage}>Anterior</button>
         </div>
         </div>
+      </>
     );
   }
 }

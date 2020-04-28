@@ -1,61 +1,80 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
 
-import Logo from "../../assets/airbnb-logo.svg";
+import { Form, Label, Input, Alert } from "reactstrap";
+import {Link} from 'react-router-dom';
+
 import api from "../../services/api";
 import { login } from "../../services/auth";
-
-import { Form, Container } from "./styles";
+import './styles.css';
 
 class SignIn extends Component {
   state = {
     email: "",
     password: "",
-    error: ""
+    error: "",
+    message: ""
   };
 
   handleSignIn = async e => {
     e.preventDefault();
+    console.log("aqui está o state", this.state);
     const { email, password } = this.state;
     if (!email || !password) {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
     } else {
       try {
         const response = await api.post("/login", { email, password });
+        console.log('a resposta é', response.data);
         login(response.data.token);
-        this.props.history.push("/app");
+                this.props.history.push("/app");
       } catch (err) {
         this.setState({
-          error:
-            "Houve um problema com o login, verifique suas credenciais. T.T"
-        });
+          message:"Houve um problema com o login, verifique suas credenciais. T.T",
+        })
+        console.log(this.state.message);
       }
     }
   };
 
   render() {
     return (
-      <Container>
+      <div className="form-signin">
+        <hr className="my-3" />
+        {this.state.message !== "" ? (
+          <Alert color="danger" className="text-center">
+            {this.state.message}
+          </Alert>
+        ) : (
+          ""
+        )}
         <Form onSubmit={this.handleSignIn}>
-          <img src={Logo} alt="Airbnb logo" />
-          {this.state.error && <p>{this.state.error}</p>}
-          <input
-            type="email"
-            placeholder="Endereço de e-mail"
-            onChange={e => this.setState({ email: e.target.value })}
-          />
-          <input
-            type="password"
-            placeholder="Senha"
-            onChange={e => this.setState({ password: e.target.value })}
-          />
-          <button type="submit">Entrar</button>
-          <hr />
-          <Link to="/signup">Criar conta grátis</Link>
+          <section>
+            <Label for="email">Email</Label>
+            <Input
+              type="text"
+              id="email"
+              onChange={e => this.setState({ email: e.target.value })}
+              placeholder="Informe seu e-mail"
+            />
+          </section>
+          <section>
+            <Label for="password">Senha</Label>
+            <Input
+              type="password"
+              id="password"
+              onChange={e => this.setState({ password: e.target.value })}
+              placeholder="Informe a senha"
+            />
+          </section>
+          <button id="logar" className="btn btn-primary btn-block" type="submit">
+            {" "}
+            Entrar{" "}
+          </button>
+          <Link  id="cadastrar" to="/signup" className="btn btn-default btn-block" type="submit">Cadastrar novo usuário</Link>
         </Form>
-      </Container>
+      </div>
     );
   }
 }
 
-export default withRouter(SignIn);
+export default SignIn;
