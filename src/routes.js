@@ -6,7 +6,7 @@ import { isAuthenticated } from "./services/auth";
 import SignUp from "./pages/Login/SignUp";
 import SignIn from "./pages/Login/SignIn";
 import Main from './components/Layout/Main';
-import Logout from './pages/Logout';
+import Logout from './pages/Login/Logout';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props =>
