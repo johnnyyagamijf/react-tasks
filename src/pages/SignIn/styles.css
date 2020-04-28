@@ -1,10 +1,13 @@
 .form-signin{
   max-width: 700px;
   margin: 100px auto 0;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 20px;
 }
 
-#cadastrar{
-  border: 2px solid #007bff;
+#logar, #cadastrar{
+  border: 1px solid #007bff;
   border-radius: 5px;
   color:#000;
   background: none;
@@ -15,16 +18,22 @@
   text-decoration: none;
 }
 
-#logar:hover{
-color: #000;
-background:  none;
-border-color:  #fff;
-transition: 0.2s all;
-}
 
-#cadastrar:hover{
+#logar:hover{
   color: #fff;
-  background:  #007bff;
+  background:  #28a744;
   border-color:  #fff;
   transition: 0.2s all;
   }
+
+#cadastrar:hover{
+    color: #fff;
+    background:  #28a744;
+    border-color:  #fff;
+    transition: 0.2s all;
+}
+
+#text-label{
+  color:  #ddd;
+  font-weight: bold;
+}

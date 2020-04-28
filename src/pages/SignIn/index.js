@@ -49,7 +49,7 @@ class SignIn extends Component {
         )}
         <Form onSubmit={this.handleSignIn}>
           <section>
-            <Label for="email">Email</Label>
+            <Label className="text-label" for="email">Email</Label>
             <Input
               type="text"
               id="email"
@@ -58,7 +58,7 @@ class SignIn extends Component {
             />
           </section>
           <section>
-            <Label for="password">Senha</Label>
+            <Label className="text-label" for="password">Senha</Label>
             <Input
               type="password"
               id="password"
@@ -66,7 +66,7 @@ class SignIn extends Component {
               placeholder="Informe a senha"
             />
           </section>
-          <button id="logar" className="btn btn-primary btn-block" type="submit">
+          <button id="logar" className="btn btn-default btn-block" type="submit">
             {" "}
             Entrar{" "}
           </button>
