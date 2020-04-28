@@ -3,8 +3,8 @@ import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
 import { isAuthenticated } from "./services/auth";
 
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
+import SignUp from "./pages/Login/SignUp";
+import SignIn from "./pages/Login/SignIn";
 import Main from './components/Layout/Main';
 import Logout from './pages/Logout';
 
