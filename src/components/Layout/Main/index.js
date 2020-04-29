@@ -2,17 +2,21 @@ import React, {Component} from 'react';
 
 import Card from '../Card'
 import api from '../../../services/api';
-          
+import Header  from '../Header';         
 export default class Main extends Component {
   constructor(props){
     super(props)
     this.state = {
       docs: [],
       pages: 0,
-      page: 1
+      page: 1,
+      user: ""
     }
   }
  async componentDidMount(){
+   const user = localStorage.getItem('user');
+   console.log('aqui ele pegou o usuário', user);
+   this.setState({user});
   this.getTasks();
   }
 
@@ -46,6 +50,7 @@ export default class Main extends Component {
   render() {
     return(
       <>
+      <Header nome={this.state.user}/>
           <div className="itens">
         {
           this.state.docs.map(task =>(

@@ -29,7 +29,7 @@ class SignIn extends Component {
       try {
         const response = await api.post("/login", { email, password });
         // armazena o token do usuário no localstorage
-        login(response.data.token);
+        login(response.data.token, email);
         this.setState({usuario: email});
 
         this.props.history.push("/app");

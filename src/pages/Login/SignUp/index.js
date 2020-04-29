@@ -20,7 +20,6 @@ class SignUp extends Component {
 
   signUp = async e => {
     e.preventDefault();
-    console.log(this.state);
     const { email, password, repeatPassword } = this.state;
 
     if (!email || !password || !repeatPassword) {
@@ -32,11 +31,11 @@ class SignUp extends Component {
       }
       try {
         const result = await api.post("/users", { email, password });
-        console.log('aqui está o resultado', result.status);
         if(result.status ===201){
-
-        }
+        alert('Usuário cadastrado com sucesso!')
         this.props.history.push("/");
+        }
+        
       } catch (err) {
         console.log(err);
         this.setState({ error: "Ocorreu um erro ao registrar sua conta. T.T" });
@@ -47,6 +46,13 @@ class SignUp extends Component {
   render() {
     return (
       <div className="limiter">
+        {this.state.message !== "" ? (
+                <Alert color="danger" className="text-center">
+                  Usuário cadastrado com sucesso
+                </Alert>
+              ) : (
+                ""
+              )}
         <div className="container-login100">
           <div className="wrap-login100">
             <form

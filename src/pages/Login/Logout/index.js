@@ -3,8 +3,8 @@ import { Component } from 'react';
 export default class Logout extends Component {
 
     componentWillMount() {
-      console.log('entrou no deslogar');
-        localStorage.removeItem("@airbnb-Token");
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
         this.props.history.push('/');
     }
 

@@ -1,9 +1,15 @@
-import React from "react";
-import {Link} from 'react-router-dom';
+import React, {Component} from "react";
 
+import { logout } from "../../../services/auth";
 import "./styles.css";
-
-const Header = props => {
+class Header extends Component {
+  constructor(props){
+    super(props)
+  }
+  logouted = () =>{
+    logout();
+  }
+render(){
   return (
     <div>
       <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -26,12 +32,12 @@ const Header = props => {
                 class="nav-link dropdown-toggle"
                 data-toggle="dropdown"
               >
-                @usuário a ser Logado
+                @{this.props.nome}
               </a>
               <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-divider" />
-                <a href="/logout" class="dropdown-item">
-                  Sair
+                <a  href="/logout" class="dropdown-item">
+                   Sair
                 </a>
               </div>
             </li>
@@ -40,6 +46,8 @@ const Header = props => {
       </nav>
     </div>
   );
-};
+}
+}
 
 export default Header;
+
