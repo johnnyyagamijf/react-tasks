@@ -14,7 +14,7 @@ header h5{
   margin-left: 400px;
 }
 
-#nav {
+/* #nav {
   align-items: center;
   text-align: center;
 }
@@ -27,3 +27,44 @@ header h5{
   margin-left: auto;
   margin-right: auto;
 }
+*/
+#nav{
+  padding: 20px;
+  width: 100%;
+  background-color: blue;
+} 
+#nav #logo{
+  text-align: center;
+  width: 60px;
+}
+#nav #usuario{
+  float: right;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.dropdown-menu{
+  background:#f8f9fa !important;
+ }
+
+.dropdown-item{
+   color: #000 !important;;
+ }
+
+ .navbar {
+  align-items: right !important;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background:black !important;
+  color:fff;
+}
+
+.navbar-brand{
+  color: #fff !important;
+}
+ 
+.nav-link{
+  color: #fff !important;
+}
+ 
+

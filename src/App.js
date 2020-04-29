@@ -7,7 +7,7 @@ import Header  from './components/Layout/Header';
 export default  () => {
   return (
     <div className="app">
-      <Header />  
+      <Header />
       <Routes />
     </div>
   );

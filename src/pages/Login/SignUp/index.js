@@ -24,7 +24,7 @@ class SignUp extends Component {
     const { email, password, repeatPassword } = this.state;
 
     if (!email || !password || !repeatPassword) {
-      this.setState({ error: "Preencha todos os dados para se cadastrar" });
+      this.setState({ message: "Preencha todos os dados para se cadastrar" });
     } else {
       if (repeatPassword !== password) {
         this.setState({ message: "Os campos de senha não são iguais" });
@@ -32,6 +32,10 @@ class SignUp extends Component {
       }
       try {
         const result = await api.post("/users", { email, password });
+        console.log('aqui está o resultado', result.status);
+        if(result.status ===201){
+
+        }
         this.props.history.push("/");
       } catch (err) {
         console.log(err);

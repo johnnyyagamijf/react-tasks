@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 import Card from '../Card'
 import api from '../../../services/api';
-import Header from '../Header';
           
 export default class Main extends Component {
   constructor(props){
@@ -54,8 +53,8 @@ export default class Main extends Component {
           ))
         }  
         <div className="action">
+        <button onClick={this.beforePage}>Anterior</button>
           <button onClick={this.nextPage}>Próxima</button>
-          <button onClick={this.beforePage}>Anterior</button>
         </div>
         </div>
       </>

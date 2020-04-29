@@ -1,28 +1,45 @@
-import React from 'react';
+import React from "react";
+import {Link} from 'react-router-dom';
 
-import {Link, BrowserRouter} from 'react-router-dom';
+import "./styles.css";
 
-import './styles.css';
-import Logout from '../../Layout/Header'
-
-export default () => {
-  return(
-    <header><h2>Minhas Tarefas</h2></header>
-  //   <nav id="nav" class="navbar navbar-expand-sm bg-dark">
-  //   <a class="navbar-brand" href="#" id="nav-logo">Lista de Tarefas</a>
-  
-  //   <ul class="navbar-nav">
-  //     <li class="nav-item dropdown">
-  //       <a href="#" id="navbardrop" data-toggle="dropdown">
-  //         @John Campos
-  //       </a>
-  //       <div class="dropdown-menu">
-  //       <div clasName="text-center">
-  //       <a className="dropdown-item" href="/logout">Logout</a>
-  //       </div>
-  //       </div>
-  //     </li>
-  //   </ul>
-  // </nav>
+const Header = props => {
+  return (
+    <div>
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="#" class="navbar-brand">
+          Minhas tarefas
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon" />
+        </button>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                @usuário a ser Logado
+              </a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-divider" />
+                <a href="/logout" class="dropdown-item">
+                  Sair
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
   );
-}
+};
+
+export default Header;

@@ -2,11 +2,10 @@ import React from 'react';
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
 import { isAuthenticated } from "./services/auth";
-
 import SignUp from "./pages/Login/SignUp";
 import SignIn from "./pages/Login/SignIn";
-import Main from './components/Layout/Main';
 import Logout from './pages/Login/Logout';
+import Main from './components/Layout/Main';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={props =>
