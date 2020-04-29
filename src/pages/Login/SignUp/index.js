@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { Alert } from "reactstrap";
 import api from "../../../services/api";
+import Swal from 'sweetalert2';
 
 import '../../Login/images/icons/favicon.ico';
 import '../../Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css';
@@ -17,14 +18,14 @@ class SignUp extends Component {
     error: "",
     message: this.props.location.state ? this.props.location.state.message : "",
   };
+ 
+signUp = async e => {
+  e.preventDefault();
+  const { email, password, repeatPassword } = this.state;
 
-  signUp = async e => {
-    e.preventDefault();
-    const { email, password, repeatPassword } = this.state;
-
-    if (!email || !password || !repeatPassword) {
-      this.setState({ message: "Preencha todos os dados para se cadastrar" });
-    } else {
+  if (!email || !password || !repeatPassword) {
+    this.setState({ message: "Preencha todos os dados para se cadastrar" });
+  } else {
       if (repeatPassword !== password) {
         this.setState({ message: "Os campos de senha não são iguais" });
         return;
@@ -32,13 +33,14 @@ class SignUp extends Component {
       try {
         const result = await api.post("/users", { email, password });
         if(result.status ===201){
-        alert('Usuário cadastrado com sucesso!')
+          Swal.fire('Usuário cadastrado com sucesso');
         this.props.history.push("/");
         }
-        
+        this.setState({ message: "Esse email já está cadastrado!" });
       } catch (err) {
-        console.log(err);
-        this.setState({ error: "Ocorreu um erro ao registrar sua conta. T.T" });
+        console.log('caiu aqui', err);
+        this.setState({ error: "Ocorreu um erro ao tentar se registrar" });
+        Swal.fire(this.state.error);
       }
     }
   };
@@ -46,13 +48,6 @@ class SignUp extends Component {
   render() {
     return (
       <div className="limiter">
-        {this.state.message !== "" ? (
-                <Alert color="danger" className="text-center">
-                  Usuário cadastrado com sucesso
-                </Alert>
-              ) : (
-                ""
-              )}
         <div className="container-login100">
           <div className="wrap-login100">
             <form

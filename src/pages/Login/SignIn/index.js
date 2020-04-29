@@ -32,7 +32,7 @@ class SignIn extends Component {
         login(response.data.token, email);
         this.setState({usuario: email});
 
-        this.props.history.push("/app");
+        this.props.history.push("/tarefas");
       } catch (err) {
         this.setState({
           message:"Houve um problema com o login, verifique suas credenciais. T.T",

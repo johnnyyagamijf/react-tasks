@@ -14,9 +14,8 @@ export default class Main extends Component {
     }
   }
  async componentDidMount(){
-   const user = localStorage.getItem('user');
-   console.log('aqui ele pegou o usuário', user);
-   this.setState({user});
+   const email = localStorage.getItem('user');
+   this.setState({user: email.substring(0, email.indexOf("@"))});
   this.getTasks();
   }
 
