@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
 import './styles.css';
+import Checkbox from '../Checkbox';
+
 class Card extends Component {
   render(){
     return(
@@ -8,7 +10,8 @@ class Card extends Component {
       <article>
         <strong>{this.props.title}</strong>
         <p>{this.props.description}</p>
-        <a href="">Detalhes</a>
+        <Checkbox />
+          <a href="">Detalhes</a>
       </article>
     </div>
     );

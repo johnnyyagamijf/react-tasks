@@ -1,0 +1,8 @@
+.checkbox {
+display: inline-block;
+width: 30px;
+height: 30px;
+background: tomato;
+border-radius: 50%;
+transition: all 150ms;
+}

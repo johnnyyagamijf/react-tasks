@@ -1,0 +1,25 @@
+.data-task{
+width: 100%;
+ padding: 20px;
+}
+.data-task form{
+  max-width: 600px;
+  margin: 40px auto 0;
+  border: 2px solid #DDD;
+  border-radius: 15px;
+  padding: 20px;
+}
+.data-task form input{
+  background: #ebebeb;
+  border: 2px solid #DDD;
+  border-radius: 50px;
+}
+.data-task form textarea{
+  background: #ebebeb;
+  border: 2px solid #DDD !important;
+  border-radius: 10px !important;
+}
+label{
+  color: black;
+}
+

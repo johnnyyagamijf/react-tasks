@@ -20,7 +20,10 @@ class SignUp extends Component {
   };
  
 signUp = async e => {
+
   e.preventDefault();
+  console.log('está aqui', this.state.message);
+  
   const { email, password, repeatPassword } = this.state;
 
   if (!email || !password || !repeatPassword) {

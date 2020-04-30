@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom'
 
 import Card from '../Card'
 import api from '../../../services/api';
-import Header  from '../Header';         
+import Header  from '../Header'; 
+
+import './styles.css';
 export default class Main extends Component {
   constructor(props){
     super(props)
@@ -55,7 +58,11 @@ export default class Main extends Component {
           this.state.docs.map(task =>(
             <Card key={task._id} title={task.title} description={task.description}/>
           ))
-        }  
+        } 
+        {/* <div className="add-item">
+          <Link id="btn-add" to="/novatask"><span class="fa fa-plus"></span></Link> 
+        </div> */}
+        
         <div className="action">
         <button onClick={this.beforePage}>Anterior</button>
           <button onClick={this.nextPage}>Próxima</button>
