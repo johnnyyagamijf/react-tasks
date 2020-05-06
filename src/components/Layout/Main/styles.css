@@ -1,23 +1,28 @@
 
-.add-item{
-  margin-bottom: 10%;
-}
+.add-item {
+ height: 50px;
+ width: 300px;
+ position: fixed;
+ bottom: 60px;
+ right: 32px;
+ }
+
 #btn-add{
   display:block;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   border: 2px solid lightgrey;
-  background-color: #000;
+  background-color: #808080;
   color: white;
   font-size: 18px;
   font-weight: bold;
-  align-items: center;
-  justify-content: center;
-  float: right;
-  margin-right: 150px;
   cursor: pointer;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
 }
+
 #btn-add:hover{
 	background-color: #666;
 }

@@ -59,9 +59,9 @@ export default class Main extends Component {
             <Card key={task._id} title={task.title} description={task.description}/>
           ))
         } 
-        {/* <div className="add-item">
-          <Link id="btn-add" to="/novatask"><span class="fa fa-plus"></span></Link> 
-        </div> */}
+        <div className="add-item">
+          <Link id="btn-add" to="/novatask" >+</Link> 
+        </div>
         
         <div className="action">
         <button onClick={this.beforePage}>Anterior</button>
