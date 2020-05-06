@@ -20,9 +20,16 @@
   cursor: pointer;
   padding: 5px;
   text-align: center;
-  font-weight: bold;
+
 }
 
 #btn-add:hover{
 	background-color: #666;
+}
+.action button{
+  background: #000;
+}
+
+.action button:hover{
+  background: #1c3815;
 }

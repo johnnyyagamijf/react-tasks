@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Alert } from "reactstrap";
 import "./styles.css";
 import api from "../../../services/api";
 class Task extends Component {
@@ -13,7 +13,7 @@ class Task extends Component {
     e.preventDefault();
     const { title, description } = this.state;
     if (!title || !description) {
-      this.setState({ message: "Preencha e-mail e senha para continuar!" });
+      this.setState({ message: "Preencha os dois campos para criar a tarefa" });
     } else {
       try {
         const response = await api.post("/tasks", { title, description });
@@ -26,13 +26,20 @@ class Task extends Component {
       }
     }
   }
- 
   render() {
     return (
      <div className="data-task">
        <form onSubmit={this.addTask}>
+       {
+         this.state.message !== "" 
+          ? (<Alert color="danger" className="text-center">
+              {this.state.message}
+            </Alert>
+           ) 
+           : ("")
+       }
          <section>
-           <label htmlFor="">Titulo</label>
+           <label htmlFor="">Titulo da tarefa</label>
            <input type="text" 
            className="form-control" 
            placeholder="Digite o titulo"
@@ -41,16 +48,18 @@ class Task extends Component {
          </section>
          <hr/>
          <section>
-           <label htmlFor="">Descrição</label>
+           <label htmlFor="">Descrição da  tarefa</label>
            <textarea 
-           class="form-control rounded-0" 
+           className="form-control rounded-0" 
            id="exampleFormControlTextarea1"
            name="descricao" 
            rows="10"
            onChange={e => this.setState({description: e.target.value})}></textarea>
          </section>
          <hr/>
-         <button type="submit" className="btn btn-outline-primary btn-block">Cadastrar</button>
+         <div className="div-submit">
+         <button type="submit" id="btn-submit">Cadastrar</button>
+         </div>
        </form>
      </div>     
     );

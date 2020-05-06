@@ -6,6 +6,7 @@ import api from '../../../services/api';
 import Header  from '../Header'; 
 
 import './styles.css';
+
 export default class Main extends Component {
   constructor(props){
     super(props)
