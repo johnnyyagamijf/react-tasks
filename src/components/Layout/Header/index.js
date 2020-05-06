@@ -13,7 +13,7 @@ render(){
   return (
     <div>
       <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a href="#" class="navbar-brand">
+        <a href="/tarefas" class="navbar-brand">
           Minhas tarefas
         </a>
         <button

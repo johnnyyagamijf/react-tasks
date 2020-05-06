@@ -12,14 +12,14 @@
   height: 50px;
   width: 50px;
   border-radius: 50%;
-  border: 2px solid lightgrey;
-  background-color: #808080;
-  color: white;
+  background-color: #000;
+  color: #fff;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   padding: 5px;
   text-align: center;
+  align-items: center;
 
 }
 
