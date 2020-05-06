@@ -2,13 +2,21 @@ import React, { Component } from "react";
 import { Alert } from "reactstrap";
 import "./styles.css";
 import api from "../../../services/api";
+import Header from '../../../components/Layout/Header';
+
 class Task extends Component {
   state = {
     title: "",
     description: "",
     error: "",
     message: this.props.location.state ? this.props.location.state.message : "",
+    user: ""
   };
+
+  async componentDidMount(){
+    const email = localStorage.getItem('user');
+    this.setState({user: email.substring(0, email.indexOf("@"))});
+   }
   addTask = async e =>{
     e.preventDefault();
     const { title, description } = this.state;
@@ -28,7 +36,9 @@ class Task extends Component {
   }
   render() {
     return (
-     <div className="data-task">
+        <React.Fragment>
+         <Header nome={this.state.user}/>
+          <div className="data-task">
        <form onSubmit={this.addTask}>
        {
          this.state.message !== "" 
@@ -61,7 +71,9 @@ class Task extends Component {
          <button type="submit" id="btn-submit">Cadastrar</button>
          </div>
        </form>
-     </div>     
+     </div>
+        </React.Fragment>
+       
     );
   }
 }
